@@ -4,11 +4,7 @@ function bizarreStringIncrementer(str) {
     return str + "1";
   }
 
-  if (lastChar < 9) {
-    return str.slice(0, -1) + (lastChar + 1);
-  }
-
-  let minimumReplacableDigits = 1;
+  let minimumReplaceableDigits = 1;
   for (let i = str.length - 2; i >= 0; i--) {
     const iChar = Number(str[i]);
 
@@ -16,17 +12,17 @@ function bizarreStringIncrementer(str) {
       break;
     }
     if (iChar === 0) {
-      minimumReplacableDigits++;
+      minimumReplaceableDigits++;
       break;
     }
     if (iChar === 9) {
-      minimumReplacableDigits++;
+      minimumReplaceableDigits++;
     }
   }
 
   return (
-    str.slice(0, -minimumReplacableDigits) +
-    (Number(str.substr(-minimumReplacableDigits)) + 1)
+    str.slice(0, -minimumReplaceableDigits) +
+    (Number(str.substr(-minimumReplaceableDigits)) + 1)
   );
 }
 
