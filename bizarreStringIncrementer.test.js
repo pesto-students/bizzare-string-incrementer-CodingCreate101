@@ -30,4 +30,15 @@ describe("bizarreStringIncrementer", () => {
   it("should always pad the only the leading zeroes", () => {
     expect(bizarreStringIncrementer("f99oo0099")).toBe("f99oo0100");
   });
+
+  // Addional tests
+  it("bizarreStringIncrementer increments by one even when number of digits increase", () => {
+    expect(bizarreStringIncrementer("foo999")).toEqual("foo1000");
+  });
+  it("should always pad the only the leading zeroes", () => {
+    expect(bizarreStringIncrementer("f99oo000099")).toBe("f99oo000100");
+  });
+  it("should handle zeroes in between", () => {
+    expect(bizarreStringIncrementer("f99oo00009009")).toBe("f99oo00009010");
+  });
 });
